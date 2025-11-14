@@ -1,0 +1,58 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
+    <id>org.madmanbeavis.WTTCommonLibTemplateMenu</id>
+
+    <!-- Public plugin name should be written in Title Case.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/best-practices-for-listing.html#plugin-name -->
+    <name>WTT-CommonLib Template Menu</name>
+
+    <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
+    <vendor url="https://www.yourcompany.com">MadManBeavis</vendor>
+
+    <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/best-practices-for-listing.html#plugin-description -->
+    <description><![CDATA[
+        A productivity plugin designed for WTT-CommonLib development that streamlines the creation of template JSON files for custom game content.
+
+        <h2>Features</h2>
+        <ul>
+            <li><b>Quick Template Generation:</b> Create pre-structured JSON templates for custom items, clothing, and other game assets with a single click</li>
+            <li><b>Context Menu Integration:</b> Access template insertion directly from the editor's right-click menu while editing files</li>
+            <li><b>Project View Integration:</b> Generate new template files directly from the project explorer using the right-click context menu</li>
+            <li><b>Seamless Workflow:</b> Reduces boilerplate code writing and ensures a consistent template structure across your project</li>
+        </ul>
+
+        <p>This plugin is specifically designed to work with the WTT-CommonLib framework from WTT's GrooveyPenguinX, providing developers with efficient tools to speed up custom content development.</p>
+    ]]></description>
+
+    <!-- Product and plugin compatibility requirements.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <!-- Extension points defined by the plugin.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
+    <extensions defaultExtensionNs="com.intellij">
+
+    </extensions>
+
+    <actions>
+        <!-- Add template menu to editor context menu -->
+        <group id="org.madmanbeavis.templates.TemplateMenuGroup"
+               class="org.madmanbeavis.wttcommonlibtemplatemenu.templates.TemplateMenuGroup"
+               text="Insert Template"
+               description="Insert template JSON files"
+               popup="true">
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+        </group>
+
+        <!-- Add template menu to project view context menu -->
+        <group id="org.madmanbeavis.templates.TemplateMenuGroup.ProjectView"
+               class="org.madmanbeavis.wttcommonlibtemplatemenu.templates.TemplateMenuGroup"
+               text="New Template File"
+               description="Create new template JSON file"
+               popup="true">
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
+        </group>
+    </actions>
+</idea-plugin>
