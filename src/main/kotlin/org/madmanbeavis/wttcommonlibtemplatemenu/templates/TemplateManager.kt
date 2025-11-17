@@ -118,7 +118,7 @@ object TemplateManager {
           "addtoTraders": false,
           "traders": {
             "PUT_TRADER_ID_HERE": {
-              "PUT_UNIQUE_ITEM_ID_HERE": {": {
+              "PUT_UNIQUE_ITEM_ID_HERE": {
                 "barterSettings": {
                   "loyalLevel": 1,
                   "unlimitedCount": false,
